@@ -1,5 +1,5 @@
 name: 'get repo stats'
-on: [pull_request, issues, push, workflow_dispatch]
+on: [pull_request, issues, workflow_dispatch]
 
 jobs:
   repo-stats:
