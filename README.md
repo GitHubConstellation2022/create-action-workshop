@@ -1,5 +1,9 @@
 # Creating your own GitHub Action from the scratch 
 
+**Welcome to the GitHub Actions workshop !!! 👋**
+
+Today we will be creating an action to get the count of issues and pull requests that are open, closed & merged in a repository. Below are the instructions and references that can be used to create this action. Happy Coding <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30">.
+
 ## Instructions
 
 ### Prerequisites 
@@ -122,6 +126,5 @@
 4. [Issues API](https://docs.github.com/en/rest/issues/issues#list-repository-list)
 5. [Events that trigger workflows](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
 6. [Webhook events & payloads](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads)
-7. [Ocktokit API documentation](https://octokit.github.io/rest.js/v18)
-8. [Creating a JavaScript Action](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action)
+7. [Creating a JavaScript Action](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action)
 
