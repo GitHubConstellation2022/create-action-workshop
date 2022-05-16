@@ -80,7 +80,7 @@
     ```
 8. Install the imported packages
     - Install @actions/core package: `npm install @actions/core@1.8.0`
-    - Install @actions/github package: `nmp install @actions/github@5.0.1`
+    - Install @actions/github package: `npm install @actions/github@5.0.1`
 
 9. Create workflow file in the same repository (.github/workflows/test.yml)
     ```yaml
