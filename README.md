@@ -15,10 +15,11 @@
 2. Clone your repository to your computer. For more information, see [Cloning a repository](https://docs.github.com/en/articles/cloning-a-repository).
 3. From your terminal, change directories into your new repository.
 4. Open the folder in VS Code or any other IDE (OPTIONAL).
-5. From your terminal, initialize the directory with npm to generate a package.json file.
+5. From your terminal, initialize the directory with npm to generate a `package.json` file.
     ```
     npm init -y
     ```
+   In the genearted `package.json` file add this line `"type": "module"` to import ES modules. 
 6. Creating an action metadata file (action.yml)
     ```yaml
     name: 'get-repo-stats'
