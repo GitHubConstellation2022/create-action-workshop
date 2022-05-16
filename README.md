@@ -118,8 +118,10 @@
 ## References
 1. [Getting started with GitHub Actions](https://github.com/features/actions)
 2. [Understanding GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
-3. [Events that trigger workflows](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
-4. [Webhook events & payloads](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads)
-5. [Ocktokit API documentation](https://octokit.github.io/rest.js/v18)
-6. [Creating a JavaScript Action](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action)
+3. [Actions Toolkit](https://github.com/actions/toolkit)
+4. [Issues API](https://docs.github.com/en/rest/issues/issues#list-repository-list)
+5. [Events that trigger workflows](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
+6. [Webhook events & payloads](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads)
+7. [Ocktokit API documentation](https://octokit.github.io/rest.js/v18)
+8. [Creating a JavaScript Action](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action)
 
