@@ -124,6 +124,7 @@ Today we will be creating an action to get the count of issues and pull requests
 2. [Understanding GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
 3. [Actions Toolkit](https://github.com/actions/toolkit)
 4. [Issues API](https://docs.github.com/en/rest/issues/issues#list-repository-list)
+5. [Octokit rest API](https://octokit.github.io/rest.js/v18#issues-list-for-repo)
 5. [Events that trigger workflows](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
 6. [Webhook events & payloads](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads)
 7. [Creating a JavaScript Action](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action)
