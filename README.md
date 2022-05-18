@@ -43,45 +43,49 @@ Today we will be creating an action to get the count of issues and pull requests
     ```
 7. Writing the action code (index.js)
     ```js
-    import { getOctokit, context } from '@actions/github';
-    import { getInput, setOutput, setFailed } from '@actions/core';
+      import { getOctokit, context } from '@actions/github';
+      import { getInput, setOutput, setFailed } from '@actions/core';
 
-    async function run() {
-      try {
-        const token = getInput('token');
-        const octokit = getOctokit(token);
+      async function run() {
+        try {
+          const token = getInput('token');
+          const octokit = getOctokit(token);
 
-        const list = await octokit.paginate(octokit.rest.issues.listForRepo, {
-          owner: context.repo.owner,
-          repo: context.repo.repo,
-          state: 'all',
-        });
+          const issues_and_prs = await octokit.paginate(octokit.rest.issues.listForRepo, {
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            state: 'all',
+          });
 
-        const issue_stats = { open: 0, closed: 0 };
-        const pull_request_stats = { open: 0, closed: 0, merged: 0 };
+          const issue_stats = { open: 0, closed: 0 };
+          const pull_request_stats = { open: 0, closed: 0, merged: 0 };
 
-        for (const item of list){
-          if ('pull_request' in item) {
-            if (item.state == 'open') pull_request_stats.open++;
-            else if (item.merged_at == null) pull_request_stats.closed++;
-            else pull_request_stats.merged++;
+          for (const item of issues_and_prs) {
+            if('pull_request' in item){
+              if (item.state == 'open') 
+                      pull_request_stats.open++;
+              else if (item.pull_request.merged_at == null) 
+                      pull_request_stats.closed++;
+              else 
+                      pull_request_stats.merged++;
+            }
+            else {
+                if (item.state == 'open') 
+                        issue_stats.open++;
+                else 
+                        issue_stats.closed++;
+            }
           }
-          else {
-            if (item.state == 'open') issue_stats.open++;
-            else issue_stats.closed++;
-          }
+
+          setOutput('pull_request_stats', pull_request_stats);
+          setOutput('issue_stats', issue_stats);
+
+        } catch (error) {
+          setFailed(error.message);
         }
-
-        setOutput('pull_request_stats', pull_request_stats);
-        setOutput('issue_stats', issue_stats);
-
-      } catch (error) {
-        setFailed(error.message);
       }
-    }
 
-    run();
-
+      run();
     ```
 8. Install the imported packages
     - Install @actions/core package: `npm install @actions/core@1.8.0`
@@ -118,6 +122,7 @@ Today we will be creating an action to get the count of issues and pull requests
 11. Open you github repository in a browser and go to Actions tab.
 12. Open the latest workflow run or trigger a new run.
 13. Expand the `print repo stats` step to see the result.
+14. Create few issues and PR's and see the workflow run outputs.
 
 ## References
 1. [Getting started with GitHub Actions](https://github.com/features/actions)
